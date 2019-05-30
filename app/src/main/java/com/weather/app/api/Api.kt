@@ -1,6 +1,7 @@
 package com.weather.app.api
 
 import com.weather.app.model.Data
+import com.weather.app.model.WeatherData
 import io.reactivex.Observable
 import retrofit2.http.GET
 import retrofit2.http.Query

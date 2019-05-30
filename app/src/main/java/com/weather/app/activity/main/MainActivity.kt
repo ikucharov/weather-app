@@ -1,5 +1,6 @@
 package com.weather.app.activity.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.content.res.AppCompatResources
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.weather.app.App
 import com.weather.app.R
 import com.weather.app.activity.BaseMvpActivity
+import com.weather.app.activity.details.WeatherDetailsActivity
 import com.weather.app.model.WeatherData
 import dagger.Lazy
 import kotlinx.android.synthetic.main.activity_main.*
@@ -44,9 +46,8 @@ class MainActivity : BaseMvpActivity<MainView, MainPresenter>(), MainView {
         )
 
         errorView.setOnClickListener {
-
+            presenter.loadData()
         }
-
     }
 
     override fun setData(data: List<WeatherData>) {

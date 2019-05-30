@@ -1,5 +1,6 @@
 package com.weather.app.dagger
 
+import com.weather.app.activity.details.WeatherDetailsActivity
 import com.weather.app.activity.main.MainActivity
 import com.weather.app.dagger.PresenterModule
 import com.weather.app.dagger.PresenterScope
@@ -14,4 +15,6 @@ import dagger.Subcomponent
 interface PresenterComponent {
 
     fun inject(mainActivity: MainActivity)
+
+    fun inject(weatherActivity: WeatherDetailsActivity)
 }
