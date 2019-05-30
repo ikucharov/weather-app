@@ -1,7 +1,7 @@
 package com.weather.app.dagger
 
 import com.weather.app.activity.main.MainPresenter
-import com.weather.app.utils.PreferencesUtil
+import com.weather.app.api.Api
 import dagger.Module
 import dagger.Provides
 
@@ -9,5 +9,5 @@ import dagger.Provides
 class PresenterModule {
 
     @Provides
-    fun providesMainPresenter(): MainPresenter = MainPresenter()
+    fun providesMainPresenter(api: Api): MainPresenter = MainPresenter(api)
 }
