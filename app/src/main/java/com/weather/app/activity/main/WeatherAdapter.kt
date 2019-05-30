@@ -36,11 +36,15 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         @SuppressLint("SetTextI18n")
-        fun bind(faqItem: WeatherData, listAdapter: WeatherAdapter) {
-            itemView.title.text = faqItem.name
+        fun bind(item: WeatherData, listAdapter: WeatherAdapter) {
+            val weather = item.weather[0]
+
+            itemView.title.text = item.name
+            itemView.description.text = weather.main + ": " + weather.description
+            itemView.temp.text = item.main.temp.toString()+" C"
 
             itemView.context.let {
-                GlideApp.with(it).load(Constants.BASE_PHOTO_URL + faqItem.weather[0].icon+".png").centerCrop()
+                GlideApp.with(it).load(Constants.BASE_PHOTO_URL + weather.icon + ".png").centerCrop()
                     .into(itemView.thumbnail)
             }
         }

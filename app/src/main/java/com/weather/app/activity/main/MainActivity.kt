@@ -26,7 +26,7 @@ class MainActivity : BaseMvpActivity<MainView, MainPresenter>(), MainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-        title = ""
+        title = resources.getString(R.string.app_name)
 
         presenter.loadData()
 
